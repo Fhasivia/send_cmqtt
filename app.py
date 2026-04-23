@@ -48,7 +48,7 @@ else:
 
 if st.button('OFF'):
     act1="OFF"
-    client1= paho.Client("GIT-HUB")                           
+    client1= paho.Client("LAURA")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
     message =json.dumps({"Act1":act1})
@@ -62,7 +62,7 @@ values = st.slider('Selecciona el rango de valores',0.0, 100.0)
 st.write('Values:', values)
 
 if st.button('Enviar valor analógico'):
-    client1= paho.Client("GIT-HUB")                           
+    client1= paho.Client("LAURA")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)   
     message =json.dumps({"Analog": float(values)})
